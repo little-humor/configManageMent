@@ -1,0 +1,27 @@
+server:
+  port: 8086
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+spring:
+  application:
+    name: common-server
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123321!
+    url: jdbc:mysql://localhost:3306/common_db
+  mail:
+    host: pop.qq.com
+    username: 943456477@qq.com
+    password: Love&Home=999
+    default-encoding: utf-8
+
+mail:
+  fromMail:
+    addr: 943456477@qq.com
+
+

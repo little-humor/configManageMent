@@ -1,0 +1,41 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: cart-server
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      percentage: 1.0
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123321!
+    url: jdbc:mysql://localhost:3306/cart_db
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:1111/eureka
+
+
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.humor.pojo
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
+logging:
+  level: com.codingapi=debug
+
+
+
+
+
+
