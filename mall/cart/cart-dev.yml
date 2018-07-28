@@ -1,8 +1,10 @@
 server:
   port: 8081
+  servlet:
+    context-path: /cart-server
 spring:
   application:
-    name: cart-server
+    name: cart-server123
   zipkin:
     base-url: http://localhost:9411/
   sleuth:
