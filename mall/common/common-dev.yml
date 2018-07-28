@@ -1,7 +1,5 @@
 server:
   port: 8086
-  servlet:
-    context-path: /common-server
 spring:
   application:
     name: common-server
