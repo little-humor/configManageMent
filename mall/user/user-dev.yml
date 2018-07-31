@@ -24,7 +24,14 @@ pagehelper:
     params: count=countSql
 
 
-
+swagger:
+  basePackage: com.humor.user.controller
+  title: 微服务、分布式实践
+  description: 笑而不语，痛而不言
+  contact:
+    name: humor
+    email: guxingying@live.cn
+    url: http://localhost:8089
 
 
 
