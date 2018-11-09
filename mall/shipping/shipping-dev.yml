@@ -1,35 +1,32 @@
 server:
   port: 8084
+  servlet:
+    context-path: /shipping-server
 spring:
   application:
     name: shipping-server
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/shipping_db
+    url: jdbc:mysql://119.18.193.77:3306/shipping_db
     username: root
-    password: 123321!
-  zipkin:
-    base-url: http://127.0.0.1:9411
-  sleuth:
-    sampler:
-      probability: 1.0
+    password: dzm123%*
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+  devtools:
+    restart:
+      enabled: true
+      exclude: static/*
 
-mybatis:
-  type-aliases-package: com.humor.pojo
-  mapper-locations: classpath:mappers/*.xml
-
-pagehelper:
-    helperDialect: mysql
-    reasonable: true
-    supportMethodsArguments: true
-    params: count=countSql
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka.springcloud.cn/eureka
 
 
-swagger:
-  basePackage: com.humor.user.controller
-  title: 微服务、分布式实践
-  description: 笑而不语，痛而不言
-  contact:
-    name: humor
-    email: guxingying@live.cn
-    url: http://localhost:8089
+
