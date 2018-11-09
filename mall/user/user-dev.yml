@@ -1,41 +1,32 @@
 server:
   port: 8085
+  servlet:
+    context-path: /user-server
+
 spring:
-  zipkin:
-    base-url: http://localhost:9411
-  sleuth:
-    sampler:
-      probability: 1.0
   application:
     name: user-server
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/user_db?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://119.18.193.77:3306/user_db?useUnicode=true&characterEncoding=utf-8
     username: root
-    password: 123321!
-mybatis:
-  type-aliases-package: com.humor.pojo
-  mapper-locations: classpath:mappers/*.xml
+    password: dzm123%*
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+    show-sql: true
+  devtools:
+    restart:
+      enabled: true
+      exclude: static/*
 
-pagehelper:
-    helperDialect: mysql
-    reasonable: true
-    supportMethodsArguments: true
-    params: count=countSql
-
-
-swagger:
-  basePackage: com.humor.user.controller
-  title: 微服务、分布式实践
-  description: 笑而不语，痛而不言
-  contact:
-    name: humor
-    email: guxingying@live.cn
-    url: http://localhost:8089
-
-
-
-
-
-
-
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka.springcloud.cn/eureka
